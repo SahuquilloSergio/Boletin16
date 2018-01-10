@@ -1,6 +1,7 @@
 package boletin16;
 
 import com.sergio.persoas.Persoal.Persoal;
+import java.util.Scanner;
 
 /**
  *
@@ -12,6 +13,7 @@ public class Academia {
     private String nome;
     private float nota;
     Persoal alum;
+    Scanner sc = new Scanner(System.in);
 
     public Academia() {
     }
@@ -60,7 +62,15 @@ public class Academia {
         return "Academia" + "\nnumReferencia=" + numReferencia + "\nnome=" + nome + "\nnota=" + nota + "\nalum=" + alum;
     }
     
-    
+    public float calcularNota(){
+        System.out.println("La nota global se compone de la media aritmetica de la parte teorica"
+                + " más la parte práctica.\nPor favor, introduce las notas del alumno:");
+        float nota1 = sc.nextFloat();
+        float nota2 = sc.nextFloat();
+        
+        float notaFinal = (nota1+nota2)/2;
+        return notaFinal;
+    }
     
     
     
